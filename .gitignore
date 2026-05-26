@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+temp_cookies/
+bot_output/
+bulk_results/
+.env
+*.log
+*.zip
+.DS_Store
