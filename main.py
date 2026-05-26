@@ -184,7 +184,7 @@ def decode_value(value):
     if '\\x20' in cleaned:
         cleaned = cleaned.replace('\\x20', ' ')
     return cleaned or None
-  # ============================================================
+# ============================================================
 #              COOKIE EXTRACTION (MULTI-FORMAT)
 # ============================================================
 
@@ -381,7 +381,7 @@ def check_cookies_batch(cookies_list: List[Dict], progress_callback=None) -> Lis
                 progress_callback(len(results), total)
     results.sort(key=lambda x: x["index"])
     return results
-  # ============================================================
+# ============================================================
 #              TELEGRAM HELPERS
 # ============================================================
 
@@ -570,7 +570,7 @@ async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 {S['copyright']} {DEVELOPER} | {S['link']} {CHANNEL_LINK}
 """
     await target.reply_text(message, parse_mode=ParseMode.HTML)
-  # ============================================================
+# ============================================================
 #              FILE HANDLER & BATCH PROCESSING
 # ============================================================
 
