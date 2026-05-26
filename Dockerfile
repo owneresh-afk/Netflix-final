@@ -2,9 +2,17 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
+# Copy requirements first (better caching)
+COPY requirements.txt /app/requirements.txt
+
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY main.py .
+# Copy bot code
+COPY main.py /app/main.py
 
-CMD ["python", "main.py"]
+# Create necessary folders
+RUN mkdir -p /app/temp_cookies /app/bot_output /app/bulk_results
+
+# Run the bot
+CMD ["python", "/app/main.py"]
